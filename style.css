@@ -1,100 +1,143 @@
-/* General Styles */
-body {
+* {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
   overflow-x: hidden;
-  background: #bde3ff;
+  color: #2b2b2b;
 }
 
-#lemon-experience {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #bde3ff 0%, #fff6cc 100%);
-}
-
-#three-container {
-  position: absolute;
+/* Background Video */
+#bg-video {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
-/* Overlay Text */
-.overlay {
-  position: absolute;
+/* Bright Golden Overlay */
+.light-overlay {
+  position: fixed;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  background: linear-gradient(
+    rgba(255, 244, 200, 0.4),
+    rgba(255, 255, 255, 0.6)
+  );
+  z-index: -1;
 }
 
-.text-stage {
-  position: absolute;
-  bottom: 25%;
-  width: 100%;
+/* Content Wrapper */
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   text-align: center;
-  color: #1e1e1e;
-  padding: 0 15px;
 }
 
-.headline-main {
-  font-size: 3rem;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
+/* Hero Text */
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  max-width: 700px;
+  line-height: 1.4;
+  margin-bottom: 20px;
 }
 
-.headline-sub,
-.headline-question {
-  font-size: 1.3rem;
-  font-weight: 300;
-  margin-top: 12px;
-  opacity: 0;
-  transform: translateY(20px);
+.subtle {
+  font-style: italic;
 }
 
-/* Form Section */
-.form-section {
-  position: absolute;
-  bottom: -100%;
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Form Container */
+.form-container {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
   width: 100%;
-  padding: 60px 20px;
-  background: rgba(255,255,255,0.95);
-  text-align: center;
-  transition: bottom 1.2s cubic-bezier(.77,0,.18,1);
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 
-.form-title { font-size: 2rem; margin-bottom: 10px; }
-.form-subtitle { opacity: 0.7; margin-bottom: 30px; }
-
-.form-section input,
-.form-section textarea {
-  width: 80%;
-  max-width: 400px;
-  padding: 12px;
-  margin: 10px 0;
+/* Inputs */
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
   border-radius: 12px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-.form-section button {
-  padding: 12px 30px;
-  background: #f4c430;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
-.form-section button:hover { background: #e5b500; }
+form input:focus,
+form textarea:focus {
+  outline: 2px solid #F4C430;
+}
 
-@media (max-width: 768px) {
-  .headline-main { font-size: 2.2rem; }
-  .headline-sub, .headline-question { font-size: 1.1rem; }
+/* Button */
+button {
+  width: 100%;
+  padding: 16px;
+  background: #F4C430;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #e6b92e;
+}
+
+/* Counter */
+.counter {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Falling Lemon */
+.falling-lemon {
+  position: fixed;
+  top: -100px;
+  width: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: drop 1.2s ease-out forwards;
+}
+
+@keyframes drop {
+  0% { top: -100px; }
+  70% { top: 45%; }
+  85% { top: 42%; }
+  100% { top: 45%; }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .question {
+    font-size: 1.4rem;
+  }
 }

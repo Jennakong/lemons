@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>When Life Gives You Lemon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>When Life Gives You Lemon</title>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="style.css" />
 
-  <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<section id="lemon-experience">
+<!-- Background Video -->
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="assets/lemon-tree.mp4" type="video/mp4">
+</video>
 
-  <!-- Birds Audio -->
-  <audio id="birds" loop>
-    <source src="birds.mp3" type="audio/mpeg">
-  </audio>
+<!-- Soft Light Overlay -->
+<div class="light-overlay"></div>
 
-  <!-- Three.js Scene Container -->
-  <div id="three-container"></div>
+<!-- Lemon Drop -->
+<img src="assets/lemon.png" class="falling-lemon" id="fallingLemon" />
 
-  <!-- Overlay Text -->
-  <div class="overlay">
-    <div class="text-stage">
-      <h1 class="headline-main">When life gives you lemon</h1>
-      <h2 class="headline-sub">They told us to make lemonade.</h2>
-      <h2 class="headline-question">We're not convinced.</h2>
-    </div>
+<!-- Main Content -->
+<div class="content">
+
+  <div class="hero-text">
+    <h1>
+      When life gives you lemon,<br>
+      they say make lemonade.<br>
+      <span class="subtle">But we’re not convinced.</span>
+    </h1>
+
+    <p class="question">
+      When life gives you lemon…<br>
+      what do you do?
+    </p>
   </div>
 
-  <!-- Form Section -->
-  <div class="form-section">
-    <h3 class="form-title">So tell us...</h3>
-    <p class="form-subtitle">When life gives you lemon, what do you do?</p>
+  <div class="form-container">
     <form id="lemonForm">
-      <input type="text" placeholder="Your name or what you go by" required>
-      <input type="text" placeholder="Country" required>
-      <textarea placeholder="When life gives you lemon, I..." required></textarea>
-      <button type="submit">Submit</button>
+
+      <input type="text" name="name" placeholder="Name (full name optional)" required>
+
+      <input type="number" name="age" placeholder="Age" required>
+
+      <input type="text" name="country" placeholder="Country" required>
+
+      <textarea name="response" rows="4" placeholder="When life gives you lemon, I…" required></textarea>
+
+      <input type="email" name="email" placeholder="Email (optional – to be notified when the pamphlet is released)">
+
+      <button type="submit">Plant Your Response</button>
     </form>
+
+    <p class="counter">
+      <span id="lemonCount">0</span> lemons planted
+    </p>
+
   </div>
 
-</section>
+</div>
 
-<script src="app.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

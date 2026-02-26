@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When Life Gives You Lemon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+</head>
+<body>
+
+<section id="lemon-experience">
+
+  <!-- Birds Audio -->
+  <audio id="birds" loop>
+    <source src="birds.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Three.js Scene Container -->
+  <div id="three-container"></div>
+
+  <!-- Overlay Text -->
+  <div class="overlay">
+    <div class="text-stage">
+      <h1 class="headline-main">When life gives you lemon</h1>
+      <h2 class="headline-sub">They told us to make lemonade.</h2>
+      <h2 class="headline-question">We're not convinced.</h2>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <h3 class="form-title">So tell us...</h3>
+    <p class="form-subtitle">When life gives you lemon, what do you do?</p>
+    <form id="lemonForm">
+      <input type="text" placeholder="Your name or what you go by" required>
+      <input type="text" placeholder="Country" required>
+      <textarea placeholder="When life gives you lemon, I..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
